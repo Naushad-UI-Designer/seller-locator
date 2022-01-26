@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Seller Locator</title>
+
+        <!-- CSS only -->
+        <style>
+            body{
+                margin: auto;
+                font-family: sans-serif;
+                box-sizing: border-box;
+            }
+            .Search-Product-div{
+                padding: 10px 20px;
+            }
+            .product-head{
+                font-size: 42px;
+                font-weight: normal;
+            }
+            .product-content{
+                background:#004379;
+                color: #fff;
+                padding: 45px 10px 60px 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+            .product-heading{
+                font-size: 38px;
+                font-weight: bold;
+                line-height: 35px;
+            }
+            .product-p{
+                font-size: 18px;
+                font-weight: 600;
+                width: 32%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 35px;
+            }
+            .form-input{
+                padding: 10px;
+                border-radius: 3px;
+                border: 1px solid #c2c2c2;
+                font-size: 16px;
+                margin-right: 10px;
+                width: 15%;
+            }
+            .form-button{
+                padding: 10px 20px;
+                border-radius: 3px;
+                background: #21824a;
+                color: #fff;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /*Media query for mobile responsive */
+            /* 
+            ##Device = Most of the Smartphones Mobiles (Portrait)
+            ##Screen = B/w 320px to 479px
+            */
+
+            @media (min-width: 320px) and (max-width: 480px) {
+
+                /* custom css */
+                .product-head {
+                    font-size: 35px;
+                }
+                .product-content {
+                    padding: 15px 10px 40px 10px;
+                }
+                .product-heading {
+                    font-size: 30px;
+                }    
+                .product-p {
+                font-size: 16px;
+                width: 80%;
+                }
+                .form-group{
+                    display: inline-grid;
+                }
+                .form-input{
+                margin-right: 0px;
+                width: 91%;
+                margin-bottom: 10px;
+                }
+            }    
+            /* 
+            ##Device = Low Resolution Tablets, Mobiles (Landscape)
+            ##Screen = B/w 481px to 767px
+            */
+
+            @media (min-width: 481px) and (max-width: 767px) {
+
+                /* custom css */
+                .product-head {
+                    font-size: 35px;
+                }
+                .product-content {
+                    padding: 15px 10px 40px 10px;
+                }
+                .product-heading {
+                    font-size: 30px;
+                }
+                .product-p {
+                font-size: 16px;
+                width: 80%;
+                }
+                .form-group{
+                    display: inline-grid;
+                }
+                .form-input{
+                margin-right: 0px;
+                width: 91%;
+                margin-bottom: 10px;
+                }
+            }
+            /* 
+            ##Device = Tablets, Ipads (portrait)
+            ##Screen = B/w 768px to 1024px
+            */
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+
+            }
+            /* 
+            ##Device = Laptops, Desktops
+            ##Screen = B/w 1025px to 1280px
+            */
+
+            @media (min-width: 1024px) and (max-width: 1280px) {
+
+            }
+            /* 
+            ##Device = Desktops
+            ##Screen = 1281px to higher resolution desktops
+            */
+
+            @media (min-width: 1281px) {
+
+            /* custom css */
+
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!--Search Section-->
+        <section class="sarch-section">
+            <div class="Search-Product-div">
+                <div>
+                    <h1 class="product-head">Seller Locator</h1>
+                </div>  
+                <div class="product-content">
+                    <h2 class="product-heading">Search Products</h2>
+                    <p class="product-p">Search for a product in a particular location and we"ll get a complete list of available seller for you</p>
+                    <form class="form-group">
+                        <input type="text" id="test" class="form-input" placeholder="test">
+                        <input type="text" id="location" class="form-input" placeholder="Location">
+                        <button type="button" class="form-button" href="#">Search Now</button>
+                    </form>    
+                </div>
+            </div>
+        </section>
+              
+    </body> 
+
+</html>

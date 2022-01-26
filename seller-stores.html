@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Seller Stores</title>
+
+        <!-- CSS only -->
+        <style>
+            body{
+                margin: auto;
+                font-family: sans-serif;
+                box-sizing: border-box;
+            }
+            .Search-Product-div{
+                padding: 10px 20px;
+            }
+            .product-head{
+                font-size: 42px;
+                font-weight: normal;
+            }
+            .seller-content{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .seller-content-div1{
+                padding: 10px 0px 10px 0px;
+                border-color:rgba(223,225,229,0);
+                box-shadow: 0 0px 6px rgba(32,33,36,0.28);
+                flex-basis: 50%;
+                overflow-y: scroll;
+                height: 600px;
+            }
+            .seller-content-div2{
+                flex-basis: 50%;
+            }
+            .form-input{
+                padding: 10px;
+                border-radius: 3px;
+                font-size: 16px;
+                border: 1px solid #c2c2c2;
+                width: 80%;
+                background: transparent;
+            }
+            .form-button{
+                padding: 10px 20px;
+                border-radius: 3px;
+                background: #006ec3;
+                color: #fff;
+                border: none;
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: 65px;
+                height: 40px;
+                margin-top: 35px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            .shop-form{
+                padding: 10px 0px 10px 50px;
+            }
+            .form-inline{
+                display: flex;
+                margin-bottom: 20px;
+            }
+            .form-group{
+                flex-basis: 50%;
+            }
+            .attach-div{
+                border-top: 1px solid #c2c2c2;
+                border-bottom: 1px solid #c2c2c2;
+                padding: 0px 20px;
+            }
+            .attach-icon{
+                float: right;
+                margin-top: -47px;
+                border: 1px solid #c2c2c2;
+                padding: 8px;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            .shopping-text-clr{
+                color: #6d62ea;
+            }
+            .parent-shop-div{
+                padding: 20px 50px 0px;
+            }
+            .shopping-text-clr{
+                font-size: 20px;
+                font-weight: normal;
+            }
+            .shop-div-heading{
+                font-size: 20px;
+                font-weight: normal;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .prod-count{
+                color: #fffeff;
+                background: #6d62ea;
+                padding: 8px 10px;
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+            .prod{
+                color: #444;
+                background: #f2eced;
+                padding: 8px 10px;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+            .prod-rating{
+                background:#45de56;
+                color: #fffeff;
+                padding: 8px 10px;
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+            .child-shop-div{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .prod-img{
+                width: 100px;
+                float: right;
+                border-radius:5px;
+            }
+            .product-details{
+                display: flex;
+            }
+            .mr-20{
+                margin-right: 20px;
+            }
+            .select-form-input{
+                padding: 10px;
+                border-radius: 3px;
+                font-size: 16px;
+                border: 1px solid #c2c2c2;
+                width: 45%;
+                background: transparent;
+            }
+            .map-img{
+                max-height: 100%;
+                height: 100%;
+                width: 100%;
+            }
+
+            /*Media query for mobile responsive */
+            /* 
+            ##Device = Most of the Smartphones Mobiles (Portrait)
+            ##Screen = B/w 320px to 479px
+            */
+
+            @media (min-width: 320px) and (max-width: 480px) {
+
+                /* custom css */
+                .product-head {
+                    font-size: 35px;
+                }
+                .product-content {
+                    padding: 15px 10px 40px 10px;
+                }
+                .seller-content{
+                    display: block;
+                }
+                .shop-form {
+                    padding: 10px 0px 10px 10px;
+                }
+                .form-inline {
+                    display: block;
+                }
+                .form-group {
+                    margin-bottom: 20px;
+                }
+                .form-button{
+                    margin-top: 10px;
+                }
+                .parent-shop-div {
+                    padding: 20px 15px 0px;
+                }
+                .child-shop-div {
+                    display: block;
+                    margin-bottom: 25px;
+                }
+                .product-details {
+                    display: block;
+                }
+                .mb-20{
+                    margin-bottom: 20px;
+                }
+                .prod-img {
+                    width: 100px;
+                    float: none;
+                } 
+                .seller-content-div2 {
+                    margin-top: 20px;
+                }
+            }      
+            /* 
+            ##Device = Low Resolution Tablets, Mobiles (Landscape)
+            ##Screen = B/w 481px to 767px
+            */
+
+            @media (min-width: 481px) and (max-width: 767px) {
+
+                /* custom css */
+                .product-head {
+                    font-size: 35px;
+                }
+                .product-content {
+                    padding: 15px 10px 40px 10px;
+                }
+                .seller-content{
+                    display: block;
+                }
+                .shop-form {
+                    padding: 10px 0px 10px 10px;
+                }
+                .form-inline {
+                    display: block;
+                }
+                .form-group {
+                    margin-bottom: 20px;
+                }
+                .form-button{
+                    margin-top: 10px;
+                }
+                .parent-shop-div {
+                    padding: 20px 15px 0px;
+                }
+                .child-shop-div {
+                    display: block;
+                    margin-bottom: 25px;
+                }
+                .product-details {
+                    display: block;
+                }
+                .mb-20{
+                    margin-bottom: 20px;
+                }
+                .prod-img {
+                    width: 100px;
+                    float: none;
+                } 
+                .seller-content-div2 {
+                    margin-top: 20px;
+                }
+            }
+            /* 
+            ##Device = Tablets, Ipads (portrait)
+            ##Screen = B/w 768px to 1024px
+            */
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+
+                .shop-form {
+                    padding: 10px 0px 10px 10px;
+                }
+                .select-form-input{
+                    width: 80%;
+                }
+                .form-button {
+                    padding: 10px 15px;
+                    font-size: 15px;
+                    margin-left: auto;
+                    margin-right: 15px;
+                }
+                .parent-shop-div {
+                    padding: 20px 10px 0px;
+                }
+                .product-details {
+                    display: block;
+                }
+                .mb-20{
+                    margin-bottom: 20px;
+                }
+                .map-img {
+                    max-height: 100%;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            /* 
+            ##Device = Laptops, Desktops
+            ##Screen = B/w 1025px to 1280pxattach-iconpx) {
+
+            }
+            /* 
+            ##Device = Desktops
+            ##Screen = 1281px to higher resolution desktopsprod
+            */
+
+            @media (min-width: 1281px) {
+
+                /*.form-button {
+                    margin-right: 25px;
+                }*/
+
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!--Search Section-->
+        <section class="sarch-section">
+            <div class="Search-Product-div">
+                <div>
+                    <h1 class="product-head">Seller Stores</h1>
+                </div>  
+                <div class="seller-content">
+                    <div class="seller-content-div1">
+                        <div class="shop-form">
+                            <form>
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label>Search for Product</label><br><br>
+                                        <input type="text" id="product-name" name="product-name" class="form-input" placeholder="Name of Product">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Location</label><br><br>
+                                        <input type="text" id="location" name="location" class="form-input" placeholder="Name of Town or City">
+                                    </div>
+                                </div>
+                                <div class="form-inline">     
+                                    <div class="form-group">
+                                        <label>Within</label><br><br>
+                                        <select class="select-form-input">
+                                            <option>250 Miles</option>
+                                            <option>50 Miles</option>
+                                            <option>20 Miles</option>
+                                            <option>200 Miles</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="form-button" href="#">Search Now</button>
+                                </div>    
+                            </form> 
+                        </div>     
+                        <div class="attach-div">
+                            <h4>We found <span class="shopping-text-clr">5</span> Seller(S)</h4>
+                            <i class="fa fa-paperclip attach-icon"></i>
+                        </div>  
+                        <div class="parent-shop-div">
+                            <div class="child-shop-div">
+                                <div class="shop-grp1">
+                                    <h2 class="shopping-text-clr shop-div-heading">1. Shopping Mart</h2>
+                                    <div class="product-details">
+                                        <p class="mr-20 mb-20"><span class="prod-count">34</span><span class="prod">Product</span></p>
+                                        <p><span class="prod-rating">2.4</span><span class="prod">Based on rating(s)</span></p>
+                                    </div>    
+                                    <p>California, United State</p>
+                                </div> 
+                                <div class="shop-grp2">
+                                    <img src="https://files.startupranking.com/startup/thumb/18554_332595fdafe80afafac864822b38246933a14371_webkul-software_m.png" class="prod-img">
+                                </div> 
+                            </div>
+                            <div class="child-shop-div">
+                                <div class="shop-grp1">
+                                    <h2 class="shopping-text-clr shop-div-heading">1. Shopping Mart</h2>
+                                    <div class="product-details">
+                                        <p class="mr-20 mb-20"><span class="prod-count">34</span><span class="prod">Product</span></p>
+                                        <p><span class="prod-rating">2.4</span><span class="prod">Based on rating(s)</span></p>
+                                    </div>    
+                                    <p>California, United State</p>
+                                </div> 
+                                <div class="shop-grp2">
+                                    <img src="https://files.startupranking.com/startup/thumb/18554_332595fdafe80afafac864822b38246933a14371_webkul-software_m.png" class="prod-img">
+                                </div> 
+                            </div> 
+                            <div class="child-shop-div">
+                                <div class="shop-grp1">
+                                    <h2 class="shopping-text-clr shop-div-heading">1. Shopping Mart</h2>
+                                    <div class="product-details">
+                                        <p class="mr-20 mb-20"><span class="prod-count">34</span><span class="prod">Product</span></p>
+                                        <p><span class="prod-rating">2.4</span><span class="prod">Based on rating(s)</span></p>
+                                    </div>    
+                                    <p>California, United State</p>
+                                </div> 
+                                <div class="shop-grp2">
+                                    <img src="https://files.startupranking.com/startup/thumb/18554_332595fdafe80afafac864822b38246933a14371_webkul-software_m.png" class="prod-img">
+                                </div> 
+                            </div> 
+                            <div class="child-shop-div">
+                                <div class="shop-grp1">
+                                    <h2 class="shopping-text-clr shop-div-heading">1. Shopping Mart</h2>
+                                    <div class="product-details">
+                                        <p class="mr-20 mb-20"><span class="prod-count">34</span><span class="prod">Product</span></p>
+                                        <p><span class="prod-rating">2.4</span><span class="prod">Based on rating(s)</span></p>
+                                    </div>    
+                                    <p>California, United State</p>
+                                </div> 
+                                <div class="shop-grp2">
+                                    <img src="https://files.startupranking.com/startup/thumb/18554_332595fdafe80afafac864822b38246933a14371_webkul-software_m.png" class="prod-img">
+                                </div> 
+                            </div> 
+                            <div class="child-shop-div">
+                                <div class="shop-grp1">
+                                    <h2 class="shopping-text-clr shop-div-heading">1. Shopping Mart</h2>
+                                    <div class="product-details">
+                                        <p class="mr-20 mb-20"><span class="prod-count">34</span><span class="prod">Product</span></p>
+                                        <p><span class="prod-rating">2.4</span><span class="prod">Based on rating(s)</span></p>
+                                    </div>    
+                                    <p>California, United State</p>
+                                </div> 
+                                <div class="shop-grp2">
+                                    <img src="https://files.startupranking.com/startup/thumb/18554_332595fdafe80afafac864822b38246933a14371_webkul-software_m.png" class="prod-img">
+                                </div> 
+                            </div>     
+                        </div> 
+                    </div>
+                    <div class="seller-content-div2">
+                        <img src="https://i.pinimg.com/originals/f6/1e/fc/f61efc2ee8af23e7333d879d152ae770.jpg" class="map-img">
+                    </div>   
+                </div>
+            </div>
+        </section>
+              
+    </body> 
+
+</html>
